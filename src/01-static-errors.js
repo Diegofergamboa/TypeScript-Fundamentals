@@ -42,8 +42,6 @@
 //     console.log(rta);
 // });
 
-
-
 //! Code debugged
 
 const myCart = []
@@ -51,35 +49,44 @@ const products = []
 const limit = 2
 
 const getProducts = async () => {
-    const rta = await fetch('http://api.escuelajs.co/api/v1/products', {
-        method: 'GET'
-    })
-    const data = await rta.json()
-    products.concat(data)
+    try {
+        const response = await fetch('http://api.escuelajs.co/api/v1/products', {
+            method: 'GET'
+        })
+        if (response.ok) {
+            const data = await response.json()
+            products.concat(data)
+        } else {
+            `${response} The response has been declined by the server`
+        }
+    } catch (error) {
+        console.error(`Error un the getProducts function, ${error}`)
+    }
 }
 
-const getTotal = () => {
-    const total = 0
-    for (const i = 0 i < products.lenght i++) {
-        total += products[i].prize
+function getTotal() {
+    let total = 0;
+    for (let i = 0; i < products.length; i++) {
+        total = + products[i].prize;
     }
-    return total
+    return total;
 }
 
-const addProduct = (index) => {
-    if (getTotal <= limit) {
-        myCart.push(products[index])
+const addProducts = async (index) => {
+    const total = await getTotal
+    if (total <= limit) {
+        myCart.push(products[index]);
     }
+}
 
-    await getProducts()
-    addProducto(1)
-    addProducto(2)
-    const total = getTotal()
-    console.log(total)
+
+const main = async () => {
     const person = {
         name: 'Nicolas',
         lastName: 'Molina'
     }
-    const rta = person + limit
-    console.log(rta)
-})
+    await getProducts()
+    addProducts(1);
+    addProducts(2);
+}
+
