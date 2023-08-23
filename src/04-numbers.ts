@@ -19,4 +19,14 @@
 
     let discount = parseInt('123')
     console.log(`Discount: ${discount}`)
+
+
+    // TSC allow to us to create the type including hexadecimals and binaries 
+    let hex = 0xfff
+    console.log(`hexadecimal ${hex}`)
+    let bin = 0b110
+    console.log(`binary ${bin}`)
+
+    // DO not use never the mayus type
+    const myNumber: Number = 10
 })()
