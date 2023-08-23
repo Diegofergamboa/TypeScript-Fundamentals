@@ -10,12 +10,12 @@
     console.log(`The customer age is: ${customerAge}`)
 
     // To initialize the type of variable we should use the type of variable as in the next example
-    let productInStock: number
-    console.log(`product in stock ${productInStock}`)
+    // let productInStock: number
+    // console.log(`product in stock ${productInStock}`)
 
-    if (productInStock > 10) {
-        console.log(`Is greater than 10`)
-    }
+    // if (productInStock > 10) {
+    //     console.log(`Is greater than 10`)
+    // }
 
     let discount = parseInt('123')
     console.log(`Discount: ${discount}`)
