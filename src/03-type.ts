@@ -2,3 +2,14 @@
 
 const myNumber : number = 20
 const myString : string = 'Diego'
+
+//* Indeference of the type
+
+// JavaScript assign a reader of type but let the compiler save the type of variables
+
+let myProductName = 'Product 1'
+// Adding a "." at the end of the variables I can check what kindof type of variable we have
+myProductName.toLocaleLowerCase()
+
+// In the const we don´t let that the variable can be rewritable
+const anotherName = 'Another string with a const'
