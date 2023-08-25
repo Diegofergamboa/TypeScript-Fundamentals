@@ -12,10 +12,10 @@
     function hi(name: string | null) {
         let hello: string = 'Hello'
         if (name) {
-            `${hello} ${name}`
+            console.log(`${hello} ${name}`)
         } else {
-            `${hello} nobody`
+            console.log(`${hello} nobody`)
         }
     }
-
+    hi('Diego')
 })()
